@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video Captcha Challenge</title>
-    <link rel="stylesheet" href="captchastyle.css">
+    <link rel="stylesheet" media='screen' href='{% static "styles/captchastyle.css"%}'>
 </head>
 <body>
     <video autoplay muted loop class="video-background">
-        <source src="bg.mp4" type="video/mp4">
+        <source src="{% static 'images/vid.mp4' %}" type="video/mp4">
     </video>      
     <div class="glass-container">
         <div class="glass-content">
@@ -19,7 +20,7 @@
             <div class="captcha-box">
                 <div class="captcha-video-container">
                     <video autoplay muted loop class="captcha-video">
-                        <source src="test.mp4" type="video/mp4">
+                        <source src="{% static 'images/test.mp4' %}" type="video/mp4">
                     </video>
                 </div>
                 <div class="question">
@@ -50,8 +51,5 @@
             }
         }
     </script>
-    <footer>
-        <p class="custom-font">&copy; 2024 VidVeri. All rights reserved.</q>
-    </footer>
 </body>
 </html>

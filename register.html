@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Page</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"  media='screen' href='{% static "styles/style.css"%}'>
 </head>
 <body>
     <video autoplay muted loop class="video-background">
-        <source src="bg.mp4" type="video/mp4">
+        <source src="{% static 'images/vid.mp4' %}" type="video/mp4">
     </video>      
     <div class="glass-container">
         <div class="login-box">
@@ -19,23 +20,20 @@
                 <input type="password" id="password" name="password" required placeholder="Password">
                 <button type="submit">Submit</button>
                 <div class="options">
-                    <p>Already have an account? <a href="index.html" id="login">Login</a></p> 
+                    <p>Already have an account? <a href="{%url 'login'%}" id="login">Login</a></p> 
                 </div>
             </form>
         </div>
     </div>
 
     <script>
-        document.getElementById('registrationForm').addEventListener('submit', function(event){
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent default form submission            
             var name = document.getElementById('name').value;
             var email = document.getElementById('email').value;
             var password = document.getElementById('password').value;
-            window.location.href = "index.html";
+            window.location.href = "login.html";
         });
     </script>
-    <footer>
-        <p>&copy; 2024 VidVeri. All rights reserved.</p>
-    </footer>
 </body>
 </html>

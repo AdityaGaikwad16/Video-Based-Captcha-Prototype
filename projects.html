@@ -1,0 +1,18 @@
+{% extends 'main.html'%}
+<html>
+<!--Basically we are following oop wher main.html is parent class and projects is child-->
+
+{% block content%}
+<h1>These are the projects</h1>
+<p>You are on the {{page}} page</p>
+
+<ul>
+{% for x in profiles %}
+   <li>Name:{{x.name}}</li>
+{% endfor %}
+</ul>
+
+{% endblock content %} 
+
+</html>
+
